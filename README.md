@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ánimo a Mi Princesa</title>
+  <style>
+    body {
+      background-color: pink;
+      text-align: center;
+      padding-top: 100px;
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: white;
+      font-size: 40px;
+    }
+
+    p {
+      color: white;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .heart {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      transform: rotate(-45deg);
+      margin: 20px auto;
+      display: inline-block;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+      top: 0;
+    }
+
+    .message {
+      color: white;
+      font-size: 32px;
+      margin-top: 50px;
+    }
+
+    .signature {
+      color: white;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    .te-amo {
+      position: absolute;
+      color: #ff3576;
+      font-size: 2rem;
+      font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0.8;
+      animation: fall 3s linear infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(20deg);
+        opacity: 0.3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>💕🍀ANIMO ERES LA MEJOR🍀🌹</h1>
+  <div class="heart"></div>
+  <p>Mi Dios🙏cuidala mucho,</p>
+  <p>se que ella es fuerte y valiente sin embargo,</p>
+  <p>cuidala de las personas con malas intenciones🙏</p>
+  <p>dale mucha salud, que cumpla sus sueños y sea la mejor.🙏🌹</p>
+  <p>💕No te rindas aqui estare para animarte y apoyarte siempre💕</p>
+  <p class="message">🌹🍀TEN POR SEGURO QUE ESTARE A TU LADO PARA APOYARTE EN LAS BUENAS Y EN LAS MALAS🍀🌹</p>
+  <p class="signature">[🌹🍀ANIMO ERES LA MEJOR DEL MUNDO MI HERMOSA MARIELA R🍀🌹]</p>
+
+  <script>
+    const frases = ['Te amo', '❤️', 'Te amo mucho', 'Te quiero', '💖', 'Te adoro', '😘', 'Te amo'];
+    function crearTeAmo() {
+      const div = document.createElement('div');
+      div.className = 'te-amo';
+      div.textContent = frases[Math.floor(Math.random() * frases.length)];
+      div.style.left = Math.random() * 100 + 'vw';
+      div.style.top = '-2rem';
+      div.style.fontSize = (1 + Math.random() * 2) + 'rem';
+      div.style.animationDuration = (2 + Math.random() * 2) + 's';
+      document.body.appendChild(div);
+      setTimeout(() => div.remove(), 4000);
+    }
+    setInterval(crearTeAmo, 200);
+  </script>
+</body>
+</html>
